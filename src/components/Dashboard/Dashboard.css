@@ -1,0 +1,12 @@
+.dashboard {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.container {
+  flex: 1;
+  background-color: yellow;
+}
