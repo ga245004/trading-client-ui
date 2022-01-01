@@ -29,12 +29,9 @@ export default function ChartActionBar() {
         }}
       >
         {actions.map((action) => (
-          <>
-            {action.type === "spacer" && (
-              <Box sx={{ flex: 1 }} key={action.name}></Box>
-            )}
-            {action.type === "icon" && (
-              <Box sx={{}} key={action.name}>
+          <Box key={action.name} sx={{ flex: action.spacer ? 1 : 0 }}>
+            {action.icon && (
+              <Box>
                 <IconButton
                   aria-label={action.name}
                   color={action.name === selected ? "primary" : "default"}
@@ -44,7 +41,7 @@ export default function ChartActionBar() {
                 </IconButton>
               </Box>
             )}
-          </>
+          </Box>
         ))}
       </Box>
     </>
@@ -53,42 +50,34 @@ export default function ChartActionBar() {
 
 const actions = [
   {
-    type: "icon",
     name: "Cross",
     icon: <FlareRoundedIcon />
   },
   {
-    type: "icon",
     name: "Chart",
     icon: <CandlestickChartRoundedIcon />
   },
   {
-    type: "icon",
     name: "Functions",
     icon: <FunctionsRoundedIcon />
   },
   {
-    type: "icon",
     name: "Add Shape",
     icon: <InterestsRoundedIcon />
   },
   {
-    type: "icon",
     name: "M1",
     icon: <LooksOneRoundedIcon />
   },
   {
-    type: "spacer",
+    spacer: true,
     name: "Spacer"
   },
   {
-    type: "icon",
     name: "search quotes",
-    selected: false,
     icon: <SearchRoundedIcon />
   },
   {
-    type: "icon",
     name: "add quotes",
     icon: <AddBoxRoundedIcon />
   }
