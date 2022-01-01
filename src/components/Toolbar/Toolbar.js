@@ -32,7 +32,8 @@ export default function Toolbar() {
       sx={{
         bgcolor: "background.paper",
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
+        borderTop: "1px solid gray"
       }}
     >
       <ToolbarTabs
@@ -42,7 +43,6 @@ export default function Toolbar() {
         scrollButtons
         allowScrollButtonsMobile
         aria-label="toolbar"
-        justi
       >
         {options.map((option) => (
           <Tab key={option.name} icon={option.icon} label={option.name}></Tab>
